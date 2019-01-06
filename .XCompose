@@ -1,0 +1,169 @@
+﻿# for Emacs: -*- coding: utf-8 -*-
+#
+# User-defined key sequences for WinCompose
+# by Sam Hocevar <sam@hocevar.net>
+#
+
+# Key sequences have the following form:
+#
+# <Multi_key> <key>… : "resulting text"
+#
+# All key names must be enclosed in <angle brackets>.
+# The first key must be <Multi_key>.
+# The remaining keys can be single characters, like <a>, <B>, <7>,
+# <.>, <@>, or from the following list:
+#
+#     Up, Down, Left, Right (the arrow keys), space, exclam, quotedbl,
+#     numbersign, dollar, percent, ampersand, apostrophe, parenleft,
+#     parenright, asterisk, plus, comma, minus, period, slash, colon,
+#     semicolon, less, equal, greater, at, bracketleft, backslash,
+#     bracketright, asciicircum, underscore, grave, braceleft, bar,
+#     braceright, asciitilde.
+#
+# For more definitions, see the files in C:\Program Files\WinCompose\res.
+
+<Multi_key> <h> <w> : "Hello, world!"
+
+# Konami code
+# <Multi_key> <Up> <Up> <Down> <Down> <Left> <Right> <Left> <Right> <b> <a> : "(ノಠ益ಠ)ノ彡┻━┻" # ANGRY TABLE FLIP
+
+# Russian Ruble sign
+# <Multi_key> <P> <minus>             : "₽"    U20bd # RUBLE SIGN
+# <Multi_key> <p> <minus>             : "₽"    U20bd # RUBLE SIGN
+
+# Various tests
+# <Multi_key> <t> <f> : "(ﾉಥ益ಥ）ﾉ﻿ ┻━┻" # Flip table like a boss.
+# <Multi_key> <h> <w> : "Hello World"
+
+# I don't think this will work:
+# <Multi_key> <h> <o> <m> <e> : <home>
+# And I also don't think I can use arrow keys as inputs:
+# <Multi_key> <ctrl> <alt> <Left> : "<home>"
+# <Multi_key> <ctrl> <alt> <Right> : <end>
+
+
+# Dashes: Figure dash, en-dash, em-dash, etc. 
+# Note: ---, --. and --= are already default Compose sequences, but repeated here for easy comparison and completeness.
+# Note: figure-dash ≠ en-dash! Figure dash has same width as digits. 
+# Figure dash is used within numbers or numeric strings, e.g. phone numbers, where it serves the same purpose as
+# hyphen does in words, i.e. "A visual guide (separator or placeholder) with little or no semantic purpose."
+# Figure dash should NOT be used for ranges, use en dash instead.
+# En dash is used to connect two symmetric items, e.g. the two ends of a range (two separate numeric items).
+# En dash has semantic meaning (e.g. "1938–1945" meaning "from 1938 to 1945") - unlike the figure dash, which is not explicitly pronounced except for maybe a short pause/space.
+# See: https://en.wikipedia.org/wiki/Dash
+<Multi_key> <minus> <minus> <minus> : "—" U2014  # em dash, &mdash; (XCompose sequence)
+<Multi_key> <minus> <minus> <.> : "–" U2013  # en dash, for e.g. ranges (0‒9, a‒z). &ndash; (XCompose sequence)
+<Multi_key> <minus> <minus> <0> : "–" U2013  # en dash, range connector. &ndash; (alt sequence)
+<Multi_key> <minus> <minus> <space> : "–" U2013  # en dash, e.g 0‒9, a‒z, &ndash; (alt sequence)
+<Multi_key> <minus> <minus> <1> : "‒" U2012  # figure dash: 555‒123‒4567, or ‒‒123.45 (display place holder).
+<Multi_key> <minus> <minus> <2> : "⸺" U2E3A  # two-em dash,;
+<Multi_key> <minus> <minus> <3> : "⸻" U2E3B  # three-em dash,;
+<Multi_key> <minus> <minus> <h> : "―" U2015  # horizontal bar and quotation dash, used e.g. for dialogue. &horbar; (alt sequence)
+<Multi_key> <K> <minus> <3> : "—" U2015  # horizontal bar, &horbar; (vim digraph sequence)
+
+<Multi_key> <minus> <minus> <equal> : "−"    U2212 # MINUS SIGN (NOT the general-purpose hyphen-minus U002D, but explicitly "minus".)
+<Multi_key> <minus> <minus> <asciitilde> : "⁓"    U2053 # SWUNG DASH, $\sim$.
+
+# Equality signs: https://en.wikipedia.org/wiki/Equals_sign
+<Multi_key> <minus> <asciitilde> : "≃"    U2243 # Asymptotic equality. Latex: \simeq. 
+<Multi_key> <equal> <asciitilde> : "≈"    U2248 # Approximately-equal. Latex: \approx.
+<Multi_key> <equal> <equal> <asciitilde> : "≅"    U2245 # Congruent or isomorph. Latex: \cong. 
+<Multi_key> <equal> <equal> : "≡"    U2261 # Triple bar, congruence relation, modular arithmetic e.g. 5 ≡ 2 (mod 3). Latex: \equiv. (standard xcompose sequence)
+<Multi_key> <!> <equal> : "≠"    U2260  # Not equal. Latex: \neq or \ne. (standard xcompose sequence)
+<Multi_key> <p> <r> <o> <p>: "∝"    U221D  # Proportional to character. Latex: \propto. HTML: &prop;. See also: Tilde (~), tilde operator (∼, &sim;).
+<Multi_key> <asciitilde> <o> <p>: "∼"    U223C  # Tilde operator. HTML: &sim;. Aka: Circa, approx, approximately (unary prefix).
+
+# Binary mathematical operators:
+<Multi_key> <plus> <minus> : "±"    U00B1 # Plus-minus sign. &plusmn; or &#177;. Latex: \pm. Replaces WinCompose ☞ default.
+
+# Unary mathematical and boolean operators:
+<Multi_key> <n> <e> <g>: "¬"    # Logical negation character. Latex: \neg.
+
+
+# Spaces:
+<Multi_key> <n> <n> <b> <s> : " " U202F  # Narrow no-break space (no-break variant of thin space).
+# The standard WinCompose xcompose file already defines for the following:
+# no-break space (compose + space + space), 
+# en-space (◆ + space + N), em-space (◆ + space + M),
+# three-per-em-space (◆ + space + 3 + M), four-per-em-space (◆ + space + 4 + M),
+# punctuation space (◆ + space + period), thin space (◆ + backslash + comma, or ◆ + space + apostrophe),
+# zero-width space, zero-width no-break space (BOM, UFEFF).
+# WinCompose also provides the ␣ "empty box" space symbol with ◆ + \ + space. 
+# But scandalously it does not provide the U+202F "Narrow no-break space" (no-break variant of thin space).
+# The ◆ + \ + \ combination is already heavily used for some combining accents.
+# Spaces, refs:
+# * https://en.wikipedia.org/wiki/Whitespace_character
+# * https://tex.stackexchange.com/questions/74353/what-commands-are-there-for-horizontal-spacing
+
+
+# Section, paragraph and other text structure symbols:
+
+# The section symbol (danish: "paragraf").
+# On danish keyboard layout, the section symbol is where the tilde (shift + `) is on enblish keyboard. So use either ` or ~.
+<Multi_key> <~> <~> <`> : "§" U00A7  # Section symbol
+<Multi_key> <p> <a> <r> <a> : "§" U00A7  # Section symbol
+<Multi_key> <s> <e> <c> <t> : "§" U00A7  # Section symbol
+
+# Pilcrow / end of paragraph symbol:
+# Not to be confused with § section symbol, which is 'paragraf' in danish.
+<Multi_key> <p> <i> <l> <c> <r> <o> <w> : "¶" U00B6  # Pilcrow (end of paragraph) symbol. &para; in HTMl.
+
+
+
+# Danish Æ, Ø, Å (Æ = AE is defined in default .XCompose)
+<Multi_key> <A> <A> : "Å" U00C5  # Latin capital letter Å (A with ring above).
+<Multi_key> <a> <a> : "å" U00E5  # Latin small letter å (a with ring above).
+<Multi_key> <O> <E> : "Ø" U00D8  # Latin capital letter Ø (O with stroke/slash through).
+<Multi_key> <o> <e> : "ø" U00F8  # Latin small letter ø (o with stroke/slash through).
+
+# German umlaut
+# Note: Typographically, this is called a "diaeresis"
+# 0196, 0214, 0220, 0228, 0246, 0252,
+# Ä, ä 		\U00c4, \U00e4
+# Ö, ö 		\U00d6, \U00f6
+# Ü, ü 		\U00dc, \U00fc
+# These are already encoded in standard .XCompose using quote, as: u", "u, etc.
+# I'm re-encoding them with u] because ] is the location of the umlaut on danish keyboard.
+<Multi_key> <colon> <colon> : "¨" U0308  # COMBINING DIAERESIS (for e.g. umlaut) - ]] and "" are already taken.
+<Multi_key> <]> <u> : "ü" U00fc  # Lating small letter u with diaeresis (u with umlaut).
+<Multi_key> <]> <U> : "Ü" U00dc  # Lating capital letter U with diaeresis (U with umlaut).
+<Multi_key> <]> <a> : "ä" U00E4  # Lating small letter a with diaeresis (a with umlaut).
+<Multi_key> <]> <A> : "Ä" U00C4  # Lating capital letter A with diaeresis (A with umlaut).
+<Multi_key> <]> <o> : "ö" U00F6  # Lating small letter o with diaeresis (o with umlaut).
+<Multi_key> <]> <O> : "Ö" U00D6  # Lating capital letter O with diaeresis (O with umlaut).
+
+
+
+# More sub-scripts and super-scripts:
+
+<Multi_key> <_> <a> : "ₐ" U0090  # Subscript a
+<Multi_key> <_> <e> : "ₑ" U0091  # Subscript e
+<Multi_key> <_> <o> : "ₒ" U0092  # Subscript o
+<Multi_key> <_> <x> : "ₓ" U0093  # Subscript x
+<Multi_key> <_> <E> : "ₔ" U0094  # Subscript exists
+<Multi_key> <_> <h> : "ₕ" U0095  # Subscript h
+<Multi_key> <_> <k> : "ₖ" U0096  # Subscript k
+<Multi_key> <_> <l> : "ₗ" U0097  # Subscript l
+<Multi_key> <_> <m> : "ₘ" U0098  # Subscript m
+<Multi_key> <_> <n> : "ₙ" U0099  # Subscript n
+<Multi_key> <_> <p> : "ₚ" U009A  # Subscript p
+<Multi_key> <_> <s> : "ₛ" U009B  # Subscript s
+<Multi_key> <_> <t> : "ₜ" U009C  # Subscript t
+
+<Multi_key> <^> <i> : "ⁱ" U0071  # Superscript i
+<Multi_key> <^> <n> : "ⁿ" U007F  # Superscript n
+
+# Sadly, there is no "superscript minus one" symbol, 
+# that would have been neat to denote inverse values with a single symbol.
+# <Multi_key> <^> <`> : "" U007F  # Superscript n
+
+
+# Other symbols:
+
+<Multi_key> <b> <d> : "◆" U25C6  # Black diamond suit
+<Multi_key> <b> <less> <greater> : "◆" U25C6  # Black diamond suit
+
+
+# REFS:
+# * https://en.wikipedia.org/wiki/Unicode_subscripts_and_superscripts
+
